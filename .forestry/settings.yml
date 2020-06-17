@@ -5,20 +5,15 @@ admin_path: "/blogs/.vuepress/public/admin"
 webhook_url: 
 sections:
 - type: directory
+  path: blogs
+  label: home
+  create: all
+  match: "**/*"
+- type: directory
   path: about
   label: about
   create: all
   match: "**/*"
-- type: directory
-  path: blogs
-  label: Suchaif
-  create: all
-  match: "**/*"
-- type: document
-  path: blogs
-  label: Document
-- type: heading
-  label: Suchaif
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
