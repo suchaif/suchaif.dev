@@ -1,0 +1,637 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Suchai Fooanant</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 4em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+  border-radius: 5px;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -2em;
+	margin-left: 0.5em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="06b22f5e-988b-44e0-a337-1f35c4582696" class="page sans"><header><img class="page-cover-image" src="Suchai%20Fooanant%2006b22f5e988b44e0a3371f35c4582696/30443302_10215883331416705_9100103267119005696_o.jpg" style="object-position:center 50.74000000000001%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Suchai%20Fooanant%2006b22f5e988b44e0a3371f35c4582696/Screen_Shot_2563-12-12_at_16.52.42.png"/></div><h1 class="page-title">Suchai Fooanant</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4c89b69c-52fd-4e32-9e33-44cca245f4a8"><div style="margin-right: 5px;"><span class="icon">👋</span></div><div style="width:100%">Hey guys, My name is Chalee a developer from BKK 🇹🇭</div></figure><h3 id="6d27eded-08ed-4543-a518-3630d8bb1154" class="">Summary</h3><p id="c06c3a16-4565-438f-8462-51cfbf880dbf" class="">Currently be an <strong>Acting CTO</strong> at <a href="https://www.facebook.com/creativemethailand">Creative ME</a>. Lead the development team (4-5 people) for successful product and nicely clean code base using <em>SOLID Principles</em>, <em>Clean Code</em> and try to achieve the repetitive process to be an automatic using CI/CD tools like <em>Fastlane,</em> <em>Jenkins</em>, <em>Gitlab-CI.</em></p><p id="264897f9-f0c0-4cab-8232-22ae230c1abf" class="">Recognized for inspiring management team members to encouraging work environments, I always believe in people that they can work with their best if we can provide the suitable environment and roadmap for them 🤟</p><p id="9ff65c44-7200-47db-a03b-bbb8d599113f" class="">
+</p><hr id="262b07d5-fc2a-437c-bea8-5e1a37308624"/><h3 id="e8cf77bf-9965-4a7d-b939-e287501da19e" class=""><strong>Key Expertise</strong></h3><ul id="a946b4db-78ba-4f20-b4b4-ad02d3eab0ff" class="bulleted-list"><li>📱 <em><strong>Swift Developer</strong></em> - mostly in iOS application with MVVM, MVP, Clean Swift with some Reactive programming using RxSwift</li></ul><ul id="0d057b09-7072-40c8-8792-ad511e52eacb" class="bulleted-list"><li>👨‍💻 <em><strong>Full Stack Developer</strong></em> - in love with Vue.js 💚 also have some experience with Backend (Node.js, Spring Boot, Laravel) and Cloud (AWS, Google Cloud)</li></ul><ul id="b0a130c5-bc5b-4f5f-a2f4-1de7fe2eb2de" class="bulleted-list"><li>🏀 <em><strong>Basketball Lover</strong></em></li></ul><ul id="63cfd4a3-9d49-4241-8fa8-696da312fa4e" class="bulleted-list"><li>🎉 <em><strong>Music Festival Raver</strong></em></li></ul><p id="f4652baa-0455-45ed-b65c-9cf945997684" class="">
+</p><hr id="b5cec0aa-e127-4439-bda5-443e232e07aa"/><h3 id="a894dc45-6294-454c-bedc-04c6e2c8110d" class="">Work History</h3><p id="45bd0267-c987-402a-a28d-9e1e68b19a40" class=""><mark class="highlight-gray"><strong>2020</strong></mark></p><ul id="7256542c-5ceb-4bde-857e-098159bcf8e0" class="toggle"><li><details open=""><summary><strong>Internal Hackathon</strong> @ <mark class="highlight-gray">Creative Me</mark> (Sep 2020)</summary><ul id="40b25d59-6499-493c-887b-52c6efdf3cf2" class="bulleted-list"><li>Start the creative project for sport&#x27;s player aim for their improvement and social media</li></ul><ul id="e0781ca0-e018-4cf0-9e26-11be1e648a72" class="bulleted-list"><li>Develop using User profile using <strong>Vue.js </strong></li></ul><ul id="ce6a0a8e-ecce-4071-b3d8-95d80e051658" class="bulleted-list"><li>Develop basketball action using <strong>CoreML</strong> <strong>Action Classifier</strong> in iOS</li></ul></details></li></ul><ul id="57dcbcf0-423f-485b-8737-1e13349fb579" class="toggle"><li><details open=""><summary><strong>Internal Blockchain Product Solidity and Frontend Developer</strong> @ <mark class="highlight-gray">Creative Me </mark>(July 2020 - Present)</summary><ul id="1622557b-bfb5-43ef-9429-b40de97bb450" class="bulleted-list"><li>Develop <strong>Yield Farming</strong>, <strong>DeFi</strong> using <strong>Ethereum</strong> smart contract (Solidity) in the core part.</li></ul><ul id="94eaa392-bd87-47ab-a2dd-6108136b7da8" class="bulleted-list"><li>Using <strong>Vue.js</strong> and <strong>web3.js</strong> for integrate with smart contract</li></ul><ul id="05e80f52-a1eb-4141-84b5-36306001e726" class="bulleted-list"><li>Hosting website on <strong>S3</strong> and using <strong>Cloudflare</strong></li></ul></details></li></ul><ul id="576016a6-6c47-46c8-b7b0-9a478912a534" class="toggle"><li><details open=""><summary><strong>Kamlungjai Full Stack Developer</strong> @ <mark class="highlight-gray">Creative Me</mark> (Jun 2020 - Dec 2020)</summary><ul id="199d1b7b-2849-421b-b43b-c6e4ba87c43d" class="bulleted-list"><li>Develop web portal for Tourism Authority of Thailand using <strong>Vue.js</strong> and <strong>Node.js</strong> with continuous delivery to <strong>Google app engine</strong> by using <strong>Github action</strong></li></ul></details></li></ul><ul id="290fc382-97f8-4776-b70a-7b2de6859f0b" class="toggle"><li><details open=""><summary><strong>iOS Team Lead</strong> @ <mark class="highlight-gray">KTB</mark> (Jan 2020 - Jun 2020)</summary><ul id="4ce3e1e3-9618-443a-82c9-e78fdf2b1eab" class="bulleted-list"><li>Consulted with developers to evaluate best practices for iOS Application using <strong>Clean Architecture</strong> + <strong>MVVM with RxSwift</strong> on <mark class="highlight-gray">Accenture&#x27;s</mark> code base</li></ul><ul id="ddacd108-3d05-4afb-9cc6-74918c01988d" class="bulleted-list"><li>Write Unit Test with <strong>80% code coverage</strong> (only ViewModels and UseCases)</li></ul><ul id="90b5706b-fc9d-4d22-90a1-6acbcb4d3540" class="bulleted-list"><li>Work with <mark class="highlight-gray">Accenture&#x27;s</mark> developer team</li></ul></details></li></ul><p id="6a969fc4-eee2-4e2c-b043-ef81634bcf83" class="">
+</p><p id="0eaeea19-8de2-4b6b-b094-a899b24dab23" class=""><mark class="highlight-gray"><strong>2019</strong></mark></p><ul id="26718fde-7cf4-45fc-9bc2-ab352ff3da47" class="toggle"><li><details open=""><summary><strong>T Leasing Team Lead</strong> @ <mark class="highlight-gray">Creative Me</mark> (Jul 2019 - Dec 2019)</summary><ul id="b5e012f8-2ab9-494d-81dd-8d45b81a1f1d" class="bulleted-list"><li>Lead development team to design code architecture and structure using <strong>Modular Architecture</strong> (Separate Application, Service, Storage) and <strong>MVVM + RxSwift</strong></li></ul><ul id="395d15a4-9c1c-44ed-97eb-5067a53d15fa" class="bulleted-list"><li>Overview of backend code standard using <strong>Spring Boot Kotlin</strong></li></ul><ul id="920b4e71-e463-4b49-928b-f61791e9eeff" class="bulleted-list"><li>Deploy application and manage the certificates, provisioning profiles by <strong>Fastlane</strong></li></ul><ul id="ffed85d4-3ce3-4120-8a30-f503ae14e58d" class="bulleted-list"><li>Review code and process for development team</li></ul><ul id="6358a702-482c-4d80-9f10-b0d31b2ffb80" class="bulleted-list"><li>Using <strong>SCRUM</strong> method for manage the project</li></ul></details></li></ul><ul id="7971332d-8836-45af-b27b-8a4c83306768" class="toggle"><li><details open=""><summary><strong>POSsal</strong> <strong>Senior Mobile Developer</strong> @ <mark class="highlight-gray">POSsal</mark> (Jan 2019 - Jul 2019)</summary><ul id="7fd6a39d-5429-4517-bd10-e38232f4c798" class="bulleted-list"><li>Design and develop internal POS product for <mark class="highlight-gray">POSsal</mark> using <strong>CleanSwift</strong></li></ul></details></li></ul><p id="138859b7-2e78-4baf-bcbb-b16ffc4020e2" class="">
+</p><p id="6f22dbda-195c-4e69-8dd7-0fe0c6d48554" class=""><mark class="highlight-gray"><strong>2016 - 2018</strong></mark></p><ul id="52c85ac4-4b18-44c1-a007-6209d55c810b" class="toggle"><li><details open=""><summary><strong>UChoose Mobile Developer</strong> @ Krungsri AYCAP (Jan 2016 - Dec 2018)</summary><ul id="f53a31f3-e14b-426e-ae7b-4ee31b61f65f" class="bulleted-list"><li>Using <strong>MVP Architecture</strong> for new feature (later from late 2017)</li></ul><ul id="e4ca0200-72f9-4ba8-8d94-4858eb7f67fc" class="bulleted-list"><li>Write Unit Test for <strong>70% code coverage</strong> (only Presenters and Components)</li></ul><ul id="5a49ca5c-823c-4954-b88f-f92bac91348f" class="bulleted-list"><li>Using <strong>SCRUM</strong> method for manage the project</li></ul><ul id="b15ed830-bb2e-4636-9938-d6f934db611b" class="bulleted-list"><li><strong>CI/CD</strong> using Jenkins, Fastlane, SonarQube, SwiftLint, Slather</li></ul></details></li></ul><p id="45660047-ef46-40c5-89aa-498c4777cca1" class="">
+</p><p id="b83e953b-c4ef-4913-a0a3-cfc076473903" class=""><mark class="highlight-gray"><strong>2015</strong></mark></p><ul id="3e71f0c7-9d81-4f10-9f07-d07d4be96bb7" class="toggle"><li><details open=""><summary><strong>Full Stack Developer</strong> @ Creative Me (Jun 2015 - Dec 2015)</summary><ul id="5ae3b08a-1509-44e8-818f-199831436c00" class="bulleted-list"><li>Worked on Wheel-go-round web application using <strong>Laravel</strong> framework and <strong>jQuery</strong></li></ul><ul id="1aecf326-d899-4a3b-8569-8fe32116a8ae" class="bulleted-list"><li>Worked on POS system using <strong>Laravel</strong> framework for Service API and <strong>Swift</strong> for iPad Development</li></ul><p id="3e82b044-1606-4dbf-9715-4544977813c1" class="">
+</p></details></li></ul><hr id="99d00670-4eed-4403-a168-4313b2f8703a"/><h3 id="d8c2f198-4ccf-4621-9a8f-ff14879c2161" class="">Toolbox</h3><ul id="d36a020f-a99b-4558-8231-8c151702e853" class="toggle"><li><details open=""><summary><strong>Web Development</strong></summary><p id="fe14aa72-aa3a-493f-a67c-2c91196c4c9b" class="">HTML, CSS, JavaScript, jQuery, SASS, PHP, Laravel, Node.js, Express, Typeorm, Puppeteer, Husky, Vue.js, Vuex, TypeScript, Spring Boot, Kotlin, Lottie, RabbitMQ, Redis, MySQL, MariaDB, Socket.IO</p></details></li></ul><ul id="fad04d03-458e-44b3-8a87-cc8671f9fb28" class="toggle"><li><details open=""><summary><strong>Cloud</strong></summary><p id="ba3d58b4-1592-4fa0-951a-68b5409db957" class=""><strong>AWS</strong> - EC2, RDS, CloudFront, S3, API Gateway, IAM, SES, Application Load Balancer, Elastic IP, Lambda</p><p id="a1038bbb-bcef-4e56-a4e3-63cbcfe8025d" class=""><strong>Google Cloud</strong> - Compute Engine, App Engine, Cloud Function, Cloud Storage</p><p id="74c85354-b897-4bed-831e-2529add6a3b0" class=""><strong>Firebase</strong> - Authentication, Crashlytics, Firestore, Storage, Analytics, Beta</p></details></li></ul><ul id="6690e491-bbaa-435e-aec2-b03677a1e4e4" class="toggle"><li><details open=""><summary><strong>iOS Development</strong></summary><p id="6878275a-69c3-4015-9a54-924674312cbd" class="">Swift, Fastlane, Xcode, SwiftLint, SwiftGen, Alamofire, Moya, CryptoSwift, KeychainAccess, Sourcery, Slather, SonarQube, RxSwift, RxCocoa, MVVM, MVP, CleanSwift, MVC, Property Wrapper, Resolver, Swinject, Nimble, SkeletonView, Kingfisher, Lottie</p></details></li></ul><ul id="0e346fba-eae7-4c68-b427-f6404e822c20" class="toggle"><li><details open=""><summary><strong>Ethereum Development</strong></summary><p id="3332fbd7-aac4-4a9c-a5e1-9feba45e8be9" class="">Remix, Solidity, Web3.js, Truffle Suite, Uniswap, Sushiswap, Alpha.finance</p></details></li></ul><ul id="0a42727a-10e6-468c-8afc-70f003143329" class="toggle"><li><details open=""><summary><strong>Project Management</strong></summary><p id="f39007e7-1f9e-4ded-a77a-52766ead8f3d" class="">Jira, Trello, Gitlab, GitHub, Bitbucket, G-Suite, Confluent, Physical Scrum board using Post-It, Slack</p><p id="e384a4d6-e82b-4463-9fb6-7ae211b70d99" class="">
+</p></details></li></ul><hr id="c7336128-8945-490c-952c-87b0e9ae9c69"/><h3 id="1522b7be-44ed-43e2-9b0d-2f6f972bdab7" class="">About Me</h3><p id="e8778f01-ea1f-4eee-b44b-0b153a9c261e" class="">🎂 1 June 1991 (29 years old)</p><p id="5020c566-dea3-4596-8dcb-ba531ebc2e45" class="">👨‍🎓 2011 - 2015 Bachelor of Engineering - Bangkok University</p><p id="3caff776-1bc5-465d-b65d-d8d54ff5bb84" class="">👨‍💻 Working as a Developer Since 2015 (~5 Years)</p><p id="449e5a19-a819-4bff-acc8-aef89eeb2bfb" class="">✉️ suchai.f@gmail.com</p><p id="8c9b616e-9886-4d67-a584-ef559b5bf13f" class="">☎️ +66 96 850 6262</p><p id="a1725925-7543-4776-82a6-56d66c562df5" class="">🗺️ Living in Bangkok, Thailand</p><p id="771062d4-7f80-46fe-890d-f18360fd38e1" class="">🤩 Hobby | Basketball, Party, Reading Books and Blogs</p><p id="95272f1e-4282-4583-8353-8f091e83ab19" class="">
+</p><hr id="fc98e978-415c-4010-a54f-4aaa60fdc865"/><h3 id="9eb0259d-e001-4558-8b19-c95ccae86d6b" class="">Personal Interests</h3><div id="e4bf5531-3597-4f6a-9e45-1706b17c4e1f" class="column-list"><div id="8cbdbbae-d269-45f5-89b0-7d36bbd72735" style="width:33.333333333333336%" class="column"><ul id="5ac6cbbe-e113-4b84-808b-362397a98d78" class="bulleted-list"><li>Self Improvement</li></ul><ul id="71e89b75-a5fa-40d9-9f85-a07438260f54" class="bulleted-list"><li>Books</li></ul><ul id="b01612c3-d3f9-4043-99ef-dc5a9b336930" class="bulleted-list"><li>Leadership</li></ul><ul id="8627c46d-a352-4f76-84d0-a2fae3fd43d9" class="bulleted-list"><li>Clean Code</li></ul><ul id="05a53142-785d-4dd3-bf23-ddbfea5c4c9d" class="bulleted-list"><li>Design Patterns</li></ul><ul id="5cab31a1-34ca-495f-b696-7ab4d381d566" class="bulleted-list"><li>SOLID Principles</li></ul><p id="3206376f-5fa8-4df9-b75d-d7a0ee3a3962" class="">
+</p></div><div id="11569010-25f4-47f6-a661-0ab193e09d28" style="width:33.333333333333336%" class="column"><ul id="3639120d-234a-4635-ace9-cf4907226db7" class="bulleted-list"><li>Cloud Computing, Serverless</li></ul><ul id="9898de52-0ba5-4ca5-8d41-67ecffc9aed9" class="bulleted-list"><li>Scalable Architecture</li></ul><ul id="333fb580-7207-49e4-a88b-bd7df6581768" class="bulleted-list"><li>iOS, Swift</li></ul><ul id="dab347b4-ae59-4299-8713-abc6d5155c30" class="bulleted-list"><li>JavaScript, TypeScript</li></ul><ul id="ede6d961-4b1f-482a-a15d-27912d62290d" class="bulleted-list"><li>Smart Contract, DeFi, Dex, DApps</li></ul></div><div id="51c557ea-e604-4a4a-842b-28ee083664d2" style="width:33.33333333333333%" class="column"><ul id="5d727b19-b702-4a2b-ad69-5910c563bff8" class="bulleted-list"><li>Basketball</li></ul><ul id="c43236b3-9010-4880-9100-5ba16085bbab" class="bulleted-list"><li>Party, Music Festival (EDM)</li></ul><ul id="9a6f2648-8745-4af5-9198-c3f2f8a87565" class="bulleted-list"><li>UI/UX</li></ul><p id="e2f498cb-b629-40a1-a73e-4b0c484f02ab" class="">
+</p></div></div></div></article></body></html>
